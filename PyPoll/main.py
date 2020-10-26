@@ -5,6 +5,7 @@
 
 import os
 import csv
+import collections
 from collections import Counter
 
 # Creating variables for counters
@@ -26,13 +27,17 @@ with open(csvpath) as csvfile:
         votes.append(str(i[2]))
     
 vote_count = Counter(votes)
+print(vote_count)
 
 max_votes = max(vote_count.values())
 
-
 winner = [i for i in vote_count.keys() if vote_count[i] == max_votes]
 
-    
+#Percetages
+
+votes_by_candidate = collections.Counter(vote_count)
+print(votes_by_candidate)
+
 
 print("Election Results")
 print("----------------------------------------------------------")
