@@ -11,7 +11,6 @@ from collections import Counter
 # Creating variables for counters
 
 votes = []
-#votes_counter = []
 
 
 # Opening the csv file for analysis
@@ -29,21 +28,21 @@ with open(csvpath) as csvfile:
 vote_count = Counter(votes)
 print(vote_count)
 
+
 max_votes = max(vote_count.values())
 
 winner = [i for i in vote_count.keys() if vote_count[i] == max_votes]
 
-#Percetages
+percentages = [(j, round(vote_count[j] / len(vote_count) * 100.0)) for j, count in vote_count.most_common()]
 
-votes_by_candidate = collections.Counter(vote_count)
-print(votes_by_candidate)
-
+print(percentages)
+print("heeeeeeerreree")
 
 print("Election Results")
 print("----------------------------------------------------------")
 print((f"Total Votes: {len(votes)}"))
 print("----------------------------------------------------------")
-# print(f"Correy: {(Correy_percent)} % \t Numbers of votes: {Correy_votes}")
+print(f"Correy: {(percentages[1])} % \t Numbers of votes: {percentages[1]}")
 # print(f"Khan: {(Khan_percent)} % \t \t Numbers of votes: {Khan_votes}")
 # print(f"Li: {(Li_percent)} % \t \t Numbers of votes: {Li_votes}")
 # print(f"O'Tooley: {(Otooley_percent)} % \t Numbers of votes: {Otooley_votes}")
