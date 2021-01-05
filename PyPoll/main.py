@@ -14,7 +14,7 @@ Total_tally = []
 #Opening cvs file
 #main_path = "C:/Users/Oswaldo Moreno/Desktop/python-challenge/PyPoll/Resources/"
 #dir_path = os.path.join(main_path, 'election_data.csv')
-election_data_file = os.path.join("PyPoll/Resources/election_data.csv")
+election_data_file = os.path.join("Resources/election_data.csv")
 with open(election_data_file,newline="",encoding="utf-8") as election:
     csvreader = csv.reader(election, delimiter=",") 
     #print(csvreader)
@@ -96,7 +96,7 @@ print("----------------------------------------------------------")
 print(f"Winner: {key} !! .... Congratulations!! ")
 
 #To outputfiles:
-output_file = ("PyPoll/Analysis/Analysis.txt")
+output_file = ("Analysis/Analysis.txt")
 with open(output_file,"w") as file:
 
     file.write(f"Election Results")
